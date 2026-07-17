@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Great+Vibes&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@400;600;700&display=swap');
+
+/* ── Design tokens ─────────────────────────────────────────────── */
+:root {
+  /* Palette — Burgundy / Deep Red tone */
+  --c-bg:          #f9f2f2;        /* very light blush background */
+  --c-card:        #ffffff;
+  --c-text:        #2a0a0a;        /* near-black with warm red tint */
+  --c-text-mid:    #7a2a2a;        /* mid burgundy */
+  --c-text-light:  #b06060;        /* light rose */
+  --c-accent:      #c8961e;        /* gold — kept for wax seal */
+  --c-silver:      #8B0000;        /* deep red replaces silver */
+  --c-silver-light:#c0404a;        /* medium red replaces silver-light */
+  --c-env:         #6b0011;        /* deep burgundy envelope */
+
+  /* Typography */
+  --f-serif:    'Cormorant Garamond', Georgia, serif;
+  --f-script:   'Great Vibes', cursive;
+  --f-hand:     'Dancing Script', cursive;
+  --f-sans:     'Inter', sans-serif;
+
+  /* Shadows */
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.08);
+  --shadow-lift: 0 12px 40px rgba(0,0,0,0.14);
+}
+
+/* ── Reset ─────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--f-sans);
+  background: var(--c-bg);
+  color: var(--c-text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Utility animations ────────────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.animate-fade-in-up { opacity: 0; }
+.animate-fade-in-up.in-view { animation: fadeInUp 0.9s ease-out both; }
+
+.animate-fade-in { opacity: 0; }
+.animate-fade-in.in-view { animation: fadeIn 0.9s ease-out both; }
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+
+/* ── Typography helpers ────────────────────────────────────────── */
+.text-serif   { font-family: var(--f-serif); }
+.text-script  { font-family: var(--f-script); }
+.text-hand    { font-family: var(--f-hand); }
+
+/* ── Divider ───────────────────────────────────────────────────── */
+.divider {
+  width: 60px;
+  height: 1px;
+  background: var(--c-silver-light);
+  margin: 0 auto;
+}
