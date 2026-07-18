@@ -22,6 +22,7 @@ const onEnvelopeOpened = async () => {
   setTimeout(() => musicPlayer.value?.play(), 400)
 
   setTimeout(fireConfetti, 1200)
+  setTimeout(startContinuousConfetti, 2500)
 }
 
 const setupScrollObserver = () => {
@@ -48,6 +49,24 @@ const fireConfetti = () => {
     if (Date.now() < end) requestAnimationFrame(frame)
   }
   frame()
+}
+
+// Pháo rớt nhẹ liên tục khi lướt
+const startContinuousConfetti = () => {
+  setInterval(() => {
+    if (document.hidden) return
+    confetti({
+      particleCount: 6,
+      angle: 90,
+      spread: 130,
+      origin: { x: Math.random(), y: -0.05 },
+      colors: ['#a31c2e', '#7a0018', '#c8961e', '#ffffff', '#ff6b8a', '#ffd700'],
+      gravity: 0.4,
+      scalar: 1.1,
+      drift: (Math.random() - 0.5) * 0.6,
+      ticks: 900,
+    })
+  }, 300)
 }
 </script>
 
@@ -95,6 +114,5 @@ const fireConfetti = () => {
     0 2px 8px  rgba(0,0,0,0.06),
     0 8px 32px rgba(0,0,0,0.10);
   border-radius: 4px;
-  overflow: hidden;
 }
 </style>

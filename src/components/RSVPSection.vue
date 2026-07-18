@@ -308,7 +308,7 @@ onUnmounted(stopAuto)
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0;
+  padding: 0 1.5rem;
 }
 
 /* ── Carousel ──────────────────────────────────────────────── */
@@ -455,17 +455,16 @@ onUnmounted(stopAuto)
   padding: 0 1rem 0;
 }
 .chapter-text {
-  font-size: 1.2rem;
+  font-size: clamp(1.6rem, 7vw, 2.8rem);
   color: #a31c2e;
   line-height: 1.3;
-  font-family: var(--f-serif);
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-family: var(--f-script);
+  font-weight: 400;
+  letter-spacing: 0.02em;
 }
 
 .note-text {
-  font-size: 2rem;
+  font-size: 1.4rem;
   color: #a31c2e;
   line-height: 1.3;
   font-family: var(--f-serif);
@@ -485,6 +484,7 @@ onUnmounted(stopAuto)
   color: var(--c-text-mid);
   line-height: 1.8;
   letter-spacing: 0.02em;
+  margin-top: 1rem;
 }
 
 /* ── Divider ───────────────────────────────────────────────── */
@@ -633,18 +633,21 @@ onUnmounted(stopAuto)
 
 /* ── Graduation banner ─────────────────────────────────────── */
 .grad-banner {
-  width: 100%;
+  width: calc(100% + 3rem);
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  margin-bottom: -1.5rem;
   background: #a31c2e;
   padding: 1.2rem 1.5rem;
   text-align: center;
-  margin-top: auto;
+  border-radius: 0 0 4px 4px;
 }
 .grad-banner-text {
   font-size: clamp(1rem, 4vw, 1.5rem);
   font-weight: 500;
   color: #ffffff;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
+  text-transform: uppercase;  
   line-height: 1;
 }
 

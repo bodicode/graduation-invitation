@@ -12,7 +12,7 @@
     </div>
 
     <!-- ── Add to Calendar ── -->
-    <div class="calendar-block animate-scale-in delay-200">
+    <div class="calendar-block animate-scale-in delay-200"> 
       <!-- Mini calendar tháng 8/2026 -->
       <a
         href="https://calendar.google.com/calendar/r/eventedit?text=Lễ+tốt+nghiệp+Thùy+Linh&dates=20260809T043000Z/20260809T050000Z&details=Lễ+tốt+nghiệp+Đại+học+Văn+Lang&location=69/68+Đặng+Thuỳ+Trâm,+An+Nhơn,+Hồ+Chí+Minh"
@@ -139,7 +139,7 @@
   margin-bottom: 0.2rem;
 }
 .time-watermark {
-  font-size: clamp(1.8rem, 8.5vw, 5.5rem);
+  font-size: clamp(1.1rem, 5vw, 2.2rem);
   font-weight: 500;
   letter-spacing: 0.08em;
   color: #a31c2e;
@@ -284,9 +284,29 @@
 /* ── Venue ─────────────────────────────────────────────────── */
 .venue-block {
   text-align: center;
-  width: 100%;
+  width: calc(100% + 3rem);
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  margin-bottom: 0;
   position: relative;
-  margin-bottom: 2.5rem;
+  padding: 2.5rem 1.5rem;
+  background: url('/images/background-hall.jpg') center/cover no-repeat;
+  overflow: hidden;
+}
+
+/* Lớp phủ mờ */
+.venue-block::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 0;
+}
+
+/* Đảm bảo các element con nổi lên trên overlay */
+.venue-block > * {
+  position: relative;
+  z-index: 1;
 }
 
 .venue-watermark-wrap {
@@ -294,10 +314,10 @@
   margin-bottom: -0.8rem;
 }
 .venue-watermark {
-  font-size: clamp(1.8rem, 8.5vw, 5.5rem);
+  font-size: clamp(1.1rem, 5vw, 2.2rem);
   font-weight: 500;
   letter-spacing: 0.08em;
-  color: #a31c2e;
+  color: rgba(255,255,255,0.85);
   text-transform: uppercase;
   line-height: 1;
   white-space: nowrap;
@@ -315,7 +335,7 @@
   font-size: 0.75rem;
   font-weight: 400;
   letter-spacing: 0.15em;
-  color: var(--c-text-mid);
+  color: rgba(255,255,255,0.9);
   text-transform: uppercase;
   line-height: 1.7;
   margin-bottom: 1.2rem;
@@ -325,12 +345,12 @@
 
 .map-btn {
   display: inline-block;
-  border: 1px solid var(--c-silver-light);
+  border: 1px solid rgba(255,255,255,0.6);
   border-radius: 30px;
   padding: 0.55rem 2rem;
   font-size: 0.78rem;
   letter-spacing: 0.18em;
-  color: var(--c-text-mid);
+  color: #fff;
   text-decoration: none;
   text-transform: uppercase;
   transition: background 0.2s ease, color 0.2s ease;
@@ -338,9 +358,9 @@
   z-index: 1;
 }
 .map-btn:hover {
-  background: var(--c-text);
+  background: rgba(255,255,255,0.2);
   color: #fff;
-  border-color: var(--c-text);
+  border-color: #fff;
 }
 
 /* ── Section divider ───────────────────────────────────────── */

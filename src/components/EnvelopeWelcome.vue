@@ -91,7 +91,15 @@ const openEnvelope = () => {
 .scene-bg {
   position: absolute;
   inset: 0;
-  background: #f9f0f0;
+  background: url('/images/background.jpg') center/cover no-repeat;
+}
+
+/* Lớp phủ mờ để envelope nổi */
+.scene-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
 }
 
 /* ── Envelope wrapper ─────────────────────────────────────────── */

@@ -62,6 +62,7 @@
   padding: 0 1rem 2.5rem;
   position: relative;
   overflow: hidden;
+  border-radius: 4px 4px 0 0;
 }
 
 /* ── GRADUATE watermark ────────────────────────────────────── */
