@@ -20,7 +20,7 @@
 
     <!-- ── Join us line ── -->
     <div class="join-block animate-fade-in-up delay-300">
-      <p class="join-text text-serif">Thân mời bạn đến dự</p>
+      <p class="join-text text-serif">Thân mời Anh/Chị/Bạn đến dự</p>
       <p class="join-sub text-serif">Lễ Tốt Nghiệp</p>
       <div class="divider animate-scale-in delay-400"></div>
     </div>
