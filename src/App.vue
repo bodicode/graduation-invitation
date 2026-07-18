@@ -6,18 +6,21 @@ import HeroSection     from './components/HeroSection.vue'
 import EventDetails    from './components/EventDetails.vue'
 import RSVPSection     from './components/RSVPSection.vue'
 import FloatingPetals  from './components/FloatingPetals.vue'
+import MusicPlayer     from './components/MusicPlayer.vue'
 
 const contentVisible = ref(false)
+const musicPlayer    = ref(null)
 
 const onEnvelopeOpened = async () => {
-  // Render content immediately so it's underneath when overlay zooms out
   contentVisible.value = true
   window.scrollTo({ top: 0 })
 
   await nextTick()
   setupScrollObserver()
 
-  // Confetti burst after overlay finishes exiting
+  // Auto-play nhạc khi thiệp mở (ngay sau interaction của user nên không bị block)
+  setTimeout(() => musicPlayer.value?.play(), 400)
+
   setTimeout(fireConfetti, 1200)
 }
 
@@ -51,6 +54,9 @@ const fireConfetti = () => {
 <template>
   <!-- Bông hoa rơi liên tục toàn trang -->
   <FloatingPetals />
+
+  <!-- Music player cố định góc phải -->
+  <MusicPlayer ref="musicPlayer" />
 
   <!-- Overlay sits on top via position:fixed inside the component -->
   <EnvelopeWelcome @opened="onEnvelopeOpened" />

@@ -17,6 +17,15 @@
       @mouseleave="onDragEnd"
       @touchend="onDragEnd"
     >
+      <!-- Floating icons around carousel -->
+      <span class="float-icon fi-1">🌸</span>
+      <span class="float-icon fi-2">🌸</span>
+      <span class="float-icon fi-3">🌺</span>
+      <span class="float-icon fi-4">🌹</span>
+      <span class="float-icon fi-5">🌸</span>
+      <span class="float-icon fi-6">🪷</span>
+      <span class="float-icon fi-7">🌼</span>
+      <span class="float-icon fi-8">🌸</span>
       <div class="carousel-track" :style="trackStyle">
         <div
           v-for="(slide, i) in slides"
@@ -377,7 +386,61 @@ onUnmounted(stopAuto)
   50%       { opacity: 0.3; transform: scale(0.6) rotate(30deg); }
 }
 
-/* Dot indicators */
+/* ── Floating icons around carousel ───────────────────────── */
+.float-icon {
+  position: absolute;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.fi-1 { top: 8px;    left:  5%;  font-size: 1rem;    animation: fi-drift-1 4.8s ease-in-out infinite; animation-delay: 0s;   }
+.fi-2 { top: 48px;   left:  2%;  font-size: 0.7rem;  animation: fi-drift-2 6.1s ease-in-out infinite; animation-delay: 1.2s; }
+.fi-3 { top: 12px;   right: 5%;  font-size: 1.05rem; animation: fi-drift-3 5.3s ease-in-out infinite; animation-delay: 0.4s; }
+.fi-4 { top: 52px;   right: 2%;  font-size: 0.72rem; animation: fi-drift-4 7.0s ease-in-out infinite; animation-delay: 2.0s; }
+.fi-5 { bottom: 58px; left:  7%; font-size: 0.88rem; animation: fi-drift-5 5.7s ease-in-out infinite; animation-delay: 0.8s; }
+.fi-6 { top: 18px;   left: 36%;  font-size: 0.6rem;  animation: fi-drift-6 3.9s ease-in-out infinite; animation-delay: 1.6s; }
+.fi-7 { bottom: 52px; right: 7%; font-size: 0.8rem;  animation: fi-drift-7 6.5s ease-in-out infinite; animation-delay: 0.2s; }
+.fi-8 { top: 24px;   right: 20%; font-size: 0.58rem; animation: fi-drift-8 4.4s ease-in-out infinite; animation-delay: 2.4s; }
+
+/* Mỗi icon có quỹ đạo riêng — lắc nhẹ, xoay chậm, độ mờ khác nhau */
+@keyframes fi-drift-1 {
+  0%,100% { transform: translate(0, 0)      rotate(-5deg);  opacity: 0.75; }
+  40%     { transform: translate(4px, -9px) rotate(10deg);  opacity: 1;    }
+  70%     { transform: translate(-3px,-5px) rotate(-2deg);  opacity: 0.85; }
+}
+@keyframes fi-drift-2 {
+  0%,100% { transform: translate(0, 0)       rotate(8deg);  opacity: 0.6; }
+  30%     { transform: translate(-5px,-7px)  rotate(-4deg); opacity: 0.9; }
+  65%     { transform: translate(3px, -12px) rotate(14deg); opacity: 0.7; }
+}
+@keyframes fi-drift-3 {
+  0%,100% { transform: translate(0, 0)      rotate(3deg);   opacity: 0.8; }
+  35%     { transform: translate(-4px,-8px) rotate(-10deg); opacity: 1;   }
+  60%     { transform: translate(2px, -4px) rotate(6deg);   opacity: 0.7; }
+}
+@keyframes fi-drift-4 {
+  0%,100% { transform: translate(0, 0)      rotate(-6deg);  opacity: 0.55; }
+  45%     { transform: translate(6px,-10px) rotate(8deg);   opacity: 0.85; }
+  75%     { transform: translate(-2px,-6px) rotate(-12deg); opacity: 0.65; }
+}
+@keyframes fi-drift-5 {
+  0%,100% { transform: translate(0, 0)      rotate(4deg);  opacity: 0.7; }
+  25%     { transform: translate(5px,-6px)  rotate(-6deg); opacity: 0.95; }
+  60%     { transform: translate(-3px,-9px) rotate(10deg); opacity: 0.75; }
+}
+@keyframes fi-drift-6 {
+  0%,100% { transform: translate(0, 0)      rotate(0deg);   opacity: 0.5; }
+  50%     { transform: translate(-4px,-8px) rotate(-15deg); opacity: 0.8; }
+}
+@keyframes fi-drift-7 {
+  0%,100% { transform: translate(0, 0)      rotate(-3deg);  opacity: 0.65; }
+  40%     { transform: translate(-5px,-7px) rotate(9deg);   opacity: 0.9; }
+  80%     { transform: translate(3px, -4px) rotate(-6deg);  opacity: 0.7; }
+}
+@keyframes fi-drift-8 {
+  0%,100% { transform: translate(0, 0)      rotate(7deg);  opacity: 0.45; }
+  55%     { transform: translate(4px,-10px) rotate(-8deg); opacity: 0.75; }
+}
 
 /* ── Script quote ──────────────────────────────────────────── */
 .chapter-block {
@@ -388,20 +451,20 @@ onUnmounted(stopAuto)
 }
 .chapter-text {
   font-size: 1.2rem;
-  color: #e8b0b8;
+  color: #a31c2e;
   line-height: 1.3;
   font-family: var(--f-serif);
-  font-weight: 300;
+  font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .note-text {
   font-size: 2rem;
-  color: #e8b0b8;
+  color: #a31c2e;
   line-height: 1.3;
   font-family: var(--f-serif);
-  font-weight: 300;
+  font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -445,7 +508,7 @@ onUnmounted(stopAuto)
   height: 26px;
   font-size: 1rem;
   line-height: 1;
-  color: #e8b0b8;
+  color: #a31c2e;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -455,7 +518,7 @@ onUnmounted(stopAuto)
   flex-shrink: 0;
 }
 .refresh-btn:hover {
-  border-color: #e8b0b8;
+  border-color: #a31c2e;
   color: var(--c-silver);
 }
 .refresh-btn.is-spinning {
@@ -470,8 +533,8 @@ onUnmounted(stopAuto)
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-family: var(--f-serif);
-  font-weight: 300;
-  color: #e8b0b8;
+  font-weight: 500;
+  color: #a31c2e;
   margin-bottom: 0.3rem;
 }
 .rsvp-by {
@@ -532,8 +595,8 @@ onUnmounted(stopAuto)
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-family: var(--f-serif);
-  font-weight: 300;
-  color: #e8b0b8;
+  font-weight: 500;
+  color: #a31c2e;
   margin-bottom: 0.1rem;
 }
 .contact-row {
@@ -614,7 +677,7 @@ onUnmounted(stopAuto)
   line-height: 1.7;
   transition: border-color 0.2s;
 }
-.gb-textarea:focus { border-color: #e8b0b8; }
+.gb-textarea:focus { border-color: #a31c2e; }
 .gb-textarea::placeholder { color: var(--c-text-light); font-style: italic; }
 
 .gb-submit {
@@ -645,7 +708,7 @@ onUnmounted(stopAuto)
 }
 .gb-entry {
   background: #fdf8f8;
-  border-left: 2px solid #e8b0b8;
+  border-left: 2px solid #a31c2e;
   padding: 0.6rem 0.9rem;
   border-radius: 0 6px 6px 0;
 }

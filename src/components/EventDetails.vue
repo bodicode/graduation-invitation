@@ -140,10 +140,9 @@
 }
 .time-watermark {
   font-size: clamp(1.8rem, 8.5vw, 5.5rem);
-  font-weight: 300;
+  font-weight: 500;
   letter-spacing: 0.08em;
-  color: transparent;
-  -webkit-text-stroke: 1px #e8b0b8;
+  color: #a31c2e;
   text-transform: uppercase;
   line-height: 1;
   white-space: nowrap;
@@ -296,10 +295,9 @@
 }
 .venue-watermark {
   font-size: clamp(1.8rem, 8.5vw, 5.5rem);
-  font-weight: 300;
+  font-weight: 500;
   letter-spacing: 0.08em;
-  color: transparent;
-  -webkit-text-stroke: 1px #e8b0b8;
+  color: #a31c2e;
   text-transform: uppercase;
   line-height: 1;
   white-space: nowrap;
