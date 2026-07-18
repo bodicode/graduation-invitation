@@ -5,6 +5,7 @@ import EnvelopeWelcome from './components/EnvelopeWelcome.vue'
 import HeroSection     from './components/HeroSection.vue'
 import EventDetails    from './components/EventDetails.vue'
 import RSVPSection     from './components/RSVPSection.vue'
+import FloatingPetals  from './components/FloatingPetals.vue'
 
 const contentVisible = ref(false)
 
@@ -28,11 +29,12 @@ const setupScrollObserver = () => {
         observer.unobserve(entry.target)
       }
     })
-  }, { threshold: 0.15 })
+  }, { threshold: 0.12 })
 
-  document.querySelectorAll('.animate-fade-in, .animate-fade-in-up').forEach((el) => {
-    observer.observe(el)
-  })
+  document.querySelectorAll(
+    '.animate-fade-in, .animate-fade-in-up, .animate-fade-in-down, ' +
+    '.animate-slide-left, .animate-slide-right, .animate-scale-in, .animate-blur-in'
+  ).forEach((el) => observer.observe(el))
 }
 
 const fireConfetti = () => {
@@ -47,6 +49,9 @@ const fireConfetti = () => {
 </script>
 
 <template>
+  <!-- Bông hoa rơi liên tục toàn trang -->
+  <FloatingPetals />
+
   <!-- Overlay sits on top via position:fixed inside the component -->
   <EnvelopeWelcome @opened="onEnvelopeOpened" />
 

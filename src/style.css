@@ -47,14 +47,47 @@ body {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-24px); }
+  to   { opacity: 1; transform: translateY(0);     }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0);     }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0);    }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1);    }
+}
+@keyframes blurIn {
+  from { opacity: 0; filter: blur(8px); transform: translateY(12px); }
+  to   { opacity: 1; filter: blur(0);   transform: translateY(0);    }
+}
 
-.animate-fade-in-up { opacity: 0; }
-.animate-fade-in-up.in-view { animation: fadeInUp 0.9s ease-out both; }
+/* Base states — hidden until in-view */
+.animate-fade-in-up    { opacity: 0; }
+.animate-fade-in       { opacity: 0; }
+.animate-fade-in-down  { opacity: 0; }
+.animate-slide-left    { opacity: 0; }
+.animate-slide-right   { opacity: 0; }
+.animate-scale-in      { opacity: 0; }
+.animate-blur-in       { opacity: 0; }
 
-.animate-fade-in { opacity: 0; }
-.animate-fade-in.in-view { animation: fadeIn 0.9s ease-out both; }
+/* Triggered when in viewport */
+.animate-fade-in-up.in-view    { animation: fadeInUp    0.8s ease-out both; }
+.animate-fade-in.in-view       { animation: fadeIn      0.8s ease-out both; }
+.animate-fade-in-down.in-view  { animation: fadeInDown  0.8s ease-out both; }
+.animate-slide-left.in-view    { animation: slideInLeft 0.8s cubic-bezier(0.34,1.2,0.64,1) both; }
+.animate-slide-right.in-view   { animation: slideInRight 0.8s cubic-bezier(0.34,1.2,0.64,1) both; }
+.animate-scale-in.in-view      { animation: scaleIn     0.7s cubic-bezier(0.34,1.56,0.64,1) both; }
+.animate-blur-in.in-view       { animation: blurIn      0.9s ease-out both; }
 
 .delay-100 { animation-delay: 0.1s; }
+.delay-150 { animation-delay: 0.15s; }
 .delay-200 { animation-delay: 0.2s; }
 .delay-300 { animation-delay: 0.3s; }
 .delay-400 { animation-delay: 0.4s; }

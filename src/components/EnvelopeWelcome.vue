@@ -15,20 +15,11 @@
         <div class="flap flap--right"></div>
         <div class="flap flap--bottom"></div>
 
-        <!-- Top lid -->
-        <div class="flap flap--top" :class="{ 'is-open': isOpened }">
-          <span class="tap-label text-script">Chạm để mở</span>
-        </div>
-
         <!-- Inner cards — slide up on open -->
         <div class="inner" :class="{ 'is-revealed': isOpened }">
-          <div class="card card--photo">
-            <img src="/images/IMG_1930.jpg" alt="Ảnh tốt nghiệp" class="card-img" />
-          </div>
           <div class="card card--invite">
             <div class="invite-frame">
-              <p class="invite-line1 text-script">Thư mời</p>
-              <p class="invite-line2 text-script">của bạn</p>
+              <p class="invite-line1 text-script">Thư mời cho những con người siêu đáng yêu</p>
             </div>
           </div>
         </div>
@@ -230,19 +221,16 @@ const openEnvelope = () => {
   transform: translateX(-50%) translateY(-108px);
 }
 
-.card { flex: 1; border-radius: 3px; overflow: hidden; box-shadow: 0 8px 22px rgba(0,0,0,0.32); }
-.card--photo { height: 178px; background: #ccc; }
-.card-img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+.card { border-radius: 3px; overflow: hidden; box-shadow: 0 8px 22px rgba(0,0,0,0.32); }
 .card--invite {
-  height: 158px; background: #fff;
-  display: flex; align-items: center; justify-content: center; padding: 8px;
+  width: 100%; height: 178px; background: #fff;
+  display: flex; align-items: center; justify-content: center; padding: 10px;
 }
 .invite-frame {
   border: 1.5px solid #e8c0c0; width: 100%; height: 100%;
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
 }
-.invite-line1 { font-size: 1.35rem; color: #7a0018; line-height: 1.1; }
-.invite-line2 { font-size: 1.6rem;  color: #5a000f; line-height: 1.1; }
+.invite-line1 { font-size: 1.6rem; color: #7a0018; line-height: 1.1; text-align: center}
 
 /* ── Drop shadow ──────────────────────────────────────────────── */
 .env-shadow {

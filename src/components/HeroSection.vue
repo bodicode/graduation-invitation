@@ -2,28 +2,14 @@
   <section class="hero">
 
     <!-- ── GRADUATE watermark title ── -->
-    <div class="watermark-wrap animate-fade-in">
+    <div class="watermark-wrap animate-blur-in">
       <h1 class="watermark text-serif">LỄ TỐT NGHIỆP</h1>
     </div>
 
-    <!-- ── Oval photo frame with ribbon bow ── -->
-    <div class="oval-wrap animate-fade-in delay-100">
-      <!-- Silver ribbon loops (pure CSS) -->
-      <div class="ribbon ribbon--left"></div>
-      <div class="ribbon ribbon--right"></div>
-
-      <!-- Oval photo mask -->
-      <div class="oval-frame">
-        <img src="/images/IMG_1930.jpg" alt="Graduation photo" class="oval-img" />
-        <!-- Oval border ring -->
-        <div class="oval-ring"></div>
-      </div>
-
-      <!-- Bow at the bottom of ribbons -->
-      <div class="bow">
-        <div class="bow-left"></div>
-        <div class="bow-knot"></div>
-        <div class="bow-right"></div>
+    <!-- ── Photo ── -->
+    <div class="photo-wrap animate-scale-in delay-150">
+      <div class="photo-frame">
+        <img src="/images/IMG_5425.JPG" alt="Graduation photo" class="photo-img" />
       </div>
     </div>
 
@@ -34,10 +20,9 @@
 
     <!-- ── Join us line ── -->
     <div class="join-block animate-fade-in-up delay-300">
-      <div class="divider"></div>
       <p class="join-text text-serif">Thân mời bạn đến dự</p>
       <p class="join-sub text-serif">Lễ Tốt Nghiệp</p>
-      <div class="divider"></div>
+      <div class="divider animate-scale-in delay-400"></div>
     </div>
 
   </section>
@@ -69,96 +54,31 @@
   font-size: clamp(1.8rem, 8.5vw, 5rem);
   font-weight: 300;
   letter-spacing: 0.08em;
-  color: transparent;
-  -webkit-text-stroke: 1px #e8b0b8;
+  color: #e8b0b8;
   text-transform: uppercase;
   line-height: 1;
   white-space: nowrap;
 }
 
-/* ── Oval frame ────────────────────────────────────────────── */
-.oval-wrap {
+/* ── Photo ─────────────────────────────────────────────────── */
+.photo-wrap {
   position: relative;
-  width: 220px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   z-index: 1;
 }
 
-.oval-frame {
-  position: relative;
+.photo-frame {
   width: 200px;
-  height: 256px;
-  border-radius: 50% / 50%;
+  height: 264px;
+  border-radius: 3px;
   overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.14);
+  box-shadow: 0 12px 40px rgba(80,0,20,0.18), 0 4px 12px rgba(80,0,20,0.10);
 }
-.oval-img {
+.photo-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top center;
   display: block;
-}
-
-/* Outer decorative ring overlay */
-.oval-ring {
-  position: absolute;
-  inset: -3px;
-  border-radius: 50% / 50%;
-  border: 2.5px solid rgba(139,0,30,0.4);
-  pointer-events: none;
-}
-
-/* ── Silver ribbon (two curved lines from top corners) ─────── */
-.ribbon {
-  position: absolute;
-  top: 10px;
-  width: 90px;
-  height: 200px;
-  border: 2px solid transparent;
-  border-radius: 50%;
-  pointer-events: none;
-}
-.ribbon--left {
-  left: -60px;
-  border-right-color: var(--c-silver-light);
-  transform: rotate(-18deg);
-}
-.ribbon--right {
-  right: -60px;
-  border-left-color: var(--c-silver-light);
-  transform: rotate(18deg);
-}
-
-/* ── Bow ───────────────────────────────────────────────────── */
-.bow {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-  margin-top: -2px;
-  position: relative;
-  z-index: 2;
-}
-.bow-left,
-.bow-right {
-  width: 28px;
-  height: 18px;
-  border-radius: 50%;
-  border: 2px solid var(--c-silver);
-  background: rgba(139,0,30,0.08);
-}
-.bow-left  { transform: rotate(-30deg) translateX(4px);  }
-.bow-right { transform: rotate(30deg)  translateX(-4px); }
-
-.bow-knot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--c-silver);
-  flex-shrink: 0;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.18);
 }
 
 /* ── Name block ────────────────────────────────────────────── */
@@ -167,10 +87,11 @@
   margin-top: 1.6rem;
 }
 .name-script {
-  font-size: 2.8rem;
+  font-size: clamp(1.7rem, 9vw, 2.8rem);
   color: var(--c-text);
   line-height: 1;
   letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 .name-caps {
   font-size: 0.8rem;

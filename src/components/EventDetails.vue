@@ -2,17 +2,17 @@
   <section class="event-section">
 
     <!-- ── Date block ── -->
-    <div class="date-block animate-fade-in-up">
+    <div class="date-block animate-fade-in-down">
       <!-- THỜI GIAN watermark -->
-      <div class="time-watermark-wrap">
+      <div class="time-watermark-wrap animate-blur-in">
         <h2 class="time-watermark text-serif">THỜI GIAN</h2>
       </div>
-      <p class="date-number text-serif">09.08.2026</p>
-      <p class="date-at text-script">lúc 11:30 sáng</p>
+      <p class="date-number text-serif animate-scale-in delay-100">09.08.2026</p>
+      <p class="date-at text-script animate-fade-in-up delay-200">lúc 11:30 sáng</p>
     </div>
 
     <!-- ── Add to Calendar ── -->
-    <div class="calendar-block animate-fade-in-up delay-100">
+    <div class="calendar-block animate-scale-in delay-200">
       <!-- Mini calendar tháng 8/2026 -->
       <a
         href="https://calendar.google.com/calendar/r/eventedit?text=Lễ+tốt+nghiệp+Thùy+Linh&dates=20260809T043000Z/20260809T050000Z&details=Lễ+tốt+nghiệp+Đại+học+Văn+Lang&location=69/68+Đặng+Thuỳ+Trâm,+An+Nhơn,+Hồ+Chí+Minh"
@@ -90,12 +90,12 @@
 
     <!-- ── Venue block ── -->
     <div class="venue-block animate-fade-in-up delay-200">
-      <div class="venue-watermark-wrap">
+      <div class="venue-watermark-wrap animate-blur-in delay-100">
         <h2 class="venue-watermark text-serif">ĐỊA ĐIỂM</h2>
       </div>
 
-      <img src="/images/Logo_VLU_2022.png" alt="Đại học Văn Lang" class="venue-logo" />
-      <p class="venue-address text-serif">
+      <img src="/images/Logo_VLU_2022.png" alt="Đại học Văn Lang" class="venue-logo animate-scale-in delay-200" />
+      <p class="venue-address text-serif animate-fade-in-up delay-300">
         69/68 Đ. Đặng Thuỳ Trâm, An Nhơn<br />
         Bình Thạnh, Hồ Chí Minh
       </p>
@@ -104,7 +104,7 @@
         href="https://www.google.com/maps/search/?api=1&query=69/68+Đ.+Đặng+Thuỳ+Trâm,+An+Nhơn,+Hồ+Chí+Minh+70000,+Việt+Nam"
         target="_blank"
         rel="noopener noreferrer"
-        class="map-btn text-serif"
+        class="map-btn text-serif animate-fade-in-up delay-400"
       >
         Xem bản đồ
       </a>
