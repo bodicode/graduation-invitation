@@ -8,7 +8,7 @@
         <h2 class="time-watermark text-serif">THỜI GIAN</h2>
       </div>
       <p class="date-number text-serif animate-scale-in delay-100">09.08.2026</p>
-      <p class="date-at text-script animate-fade-in-up delay-200">lúc 11:30 sáng</p>
+      <p class="date-at text-script animate-fade-in-up delay-200">lúc 10:30am - 12:00pm</p>
     </div>
 
     <!-- ── Add to Calendar ── -->
