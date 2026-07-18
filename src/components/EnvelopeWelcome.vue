@@ -91,7 +91,11 @@ const openEnvelope = () => {
 .scene-bg {
   position: absolute;
   inset: 0;
-  background: url('/images/background.jpg') center/cover no-repeat;
+  background:
+    url('/images/background.jpg') center/cover no-repeat,
+    linear-gradient(135deg, #2a0a0a 0%, #4a0010 50%, #1a0505 100%);
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 /* Lớp phủ mờ để envelope nổi */
