@@ -128,6 +128,11 @@
     </div>
 
     <div class="bottom-pad"></div>
+
+    <!-- ── Graduation banner ── -->
+    <div class="grad-banner animate-fade-in-up">
+      <p class="grad-banner-text text-serif">Graduation Ceremony</p>
+    </div>
   </section>
 </template>
 
@@ -303,7 +308,7 @@ onUnmounted(stopAuto)
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 1.5rem;
+  padding: 0;
 }
 
 /* ── Carousel ──────────────────────────────────────────────── */
@@ -624,7 +629,24 @@ onUnmounted(stopAuto)
 }
 
 /* ── Bottom pad ────────────────────────────────────────────── */
-.bottom-pad { height: 4rem; }
+.bottom-pad { height: 2rem; }
+
+/* ── Graduation banner ─────────────────────────────────────── */
+.grad-banner {
+  width: 100%;
+  background: #a31c2e;
+  padding: 1.2rem 1.5rem;
+  text-align: center;
+  margin-top: auto;
+}
+.grad-banner-text {
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1;
+}
 
 /* ── Section divider ───────────────────────────────────────── */
 .section-divider {
