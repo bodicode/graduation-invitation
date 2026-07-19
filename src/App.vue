@@ -21,7 +21,6 @@ const onEnvelopeOpened = async () => {
   // Auto-play nhạc khi thiệp mở (ngay sau interaction của user nên không bị block)
   setTimeout(() => musicPlayer.value?.play(), 400)
 
-  setTimeout(fireConfetti, 1200)
   setTimeout(startContinuousConfetti, 2500)
 }
 
@@ -41,22 +40,12 @@ const setupScrollObserver = () => {
   ).forEach((el) => observer.observe(el))
 }
 
-const fireConfetti = () => {
-  const end = Date.now() + 3000
-  const frame = () => {
-    confetti({ particleCount: 4, angle: 60,  spread: 52, origin: { x: 0 }, colors: ['#c8a63a','#ffffff','#aaaaaa'] })
-    confetti({ particleCount: 4, angle: 120, spread: 52, origin: { x: 1 }, colors: ['#c8a63a','#ffffff','#aaaaaa'] })
-    if (Date.now() < end) requestAnimationFrame(frame)
-  }
-  frame()
-}
-
 // Pháo rớt nhẹ liên tục khi lướt
 const startContinuousConfetti = () => {
   setInterval(() => {
     if (document.hidden) return
     confetti({
-      particleCount: 6,
+      particleCount: 2,
       angle: 90,
       spread: 130,
       origin: { x: Math.random(), y: -0.05 },
@@ -66,7 +55,7 @@ const startContinuousConfetti = () => {
       drift: (Math.random() - 0.5) * 0.6,
       ticks: 900,
     })
-  }, 300)
+  }, 1200)
 }
 </script>
 
