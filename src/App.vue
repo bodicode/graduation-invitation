@@ -18,10 +18,11 @@ const onEnvelopeOpened = async () => {
   await nextTick()
   setupScrollObserver()
 
-  // Auto-play nhạc khi thiệp mở (ngay sau interaction của user nên không bị block)
+  // Auto-play nhạc khi thiệp mở
   setTimeout(() => musicPlayer.value?.play(), 400)
 
-  setTimeout(startContinuousConfetti, 2500)
+  // Pháo rơi ngay khi vào thiệp
+  startContinuousConfetti()
 }
 
 const setupScrollObserver = () => {
@@ -40,8 +41,30 @@ const setupScrollObserver = () => {
   ).forEach((el) => observer.observe(el))
 }
 
-// Pháo rớt nhẹ liên tục khi lướt
+// Pháo rớt liên tục khi lướt
 const startContinuousConfetti = () => {
+  // Burst mạnh lúc đầu trong 4s
+  const burstEnd = Date.now() + 4000
+  const burstFrame = () => {
+    confetti({
+      particleCount: 8,
+      angle: 90,
+      spread: 160,
+      origin: { x: Math.random(), y: -0.05 },
+      colors: ['#a31c2e', '#7a0018', '#c8961e', '#ffffff', '#ff6b8a', '#ffd700'],
+      gravity: 0.4,
+      scalar: 1.1,
+      drift: (Math.random() - 0.5) * 0.6,
+      ticks: 900,
+    })
+    if (Date.now() < burstEnd) setTimeout(burstFrame, 200)
+    else startSlowConfetti()  // sau đó chuyển sang rơi thưa
+  }
+  burstFrame()
+}
+
+// Rơi thưa liên tục sau burst
+const startSlowConfetti = () => {
   setInterval(() => {
     if (document.hidden) return
     confetti({

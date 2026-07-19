@@ -75,7 +75,6 @@ const openEnvelope = () => {
   align-items: center;
   justify-content: center;
   z-index: 300;
-  /* exit: scale up & fade — the illusion that the card "becomes" the page */
   transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1),
               opacity   0.9s 0.1s ease;
 }
