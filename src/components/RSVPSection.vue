@@ -192,9 +192,10 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 // ── Carousel ──────────────────────────────────────────────────
 const slides = [
   { src: '/images/IMG_1930.jpg',  alt: 'Ký ức tốt nghiệp' },
+  { src: '/images/IMG_5863.jpg',  alt: 'Ký ức tốt nghiệp' },
+  { src: '/images/IMG_5864.jpg',  alt: 'Ký ức tốt nghiệp' },
   { src: '/images/IMG_5744.JPG',  alt: 'Ảnh tốt nghiệp'   },
   { src: '/images/IMG_5745.PNG',  alt: 'Chúc mừng'         },
-  { src: '/images/IMG_5745.JPG',  alt: 'Chúc mừng'         },
 ]
 
 const current    = ref(0)

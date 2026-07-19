@@ -107,14 +107,44 @@ import CountdownTimer from './CountdownTimer.vue'
         Bình Thạnh, Hồ Chí Minh
       </p>
 
-      <a
-        href="https://www.google.com/maps/search/?api=1&query=69/68+Đ.+Đặng+Thuỳ+Trâm,+An+Nhơn,+Hồ+Chí+Minh+70000,+Việt+Nam"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="map-btn text-serif animate-fade-in-up delay-400"
-      >
-        Xem bản đồ
-      </a>
+      <div class="venue-btns animate-fade-in-up delay-400">
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=69/68+Đ.+Đặng+Thuỳ+Trâm,+An+Nhơn,+Hồ+Chí+Minh+70000,+Việt+Nam"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="map-btn text-serif"
+        >
+          Xem bản đồ
+        </a>
+        <a
+          href="https://drive.google.com/file/d/1azm4R6iDI1rLUMHLhXygEdHkH4UlKIFg/view"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="directions-btn text-serif"
+        >
+          Hướng dẫn đến điểm hẹn
+        </a>
+      </div>
+
+      <!-- ── Venue photo grid ── -->
+      <div class="venue-photos animate-fade-in-up delay-400">
+        <!-- Ảnh lớn trên -->
+        <div class="venue-photo-main">
+          <img src="/images/IMG_5870.jpg" alt="Sơ đồ lễ tốt nghiệp" />
+        </div>
+        <!-- 3 ảnh nhỏ dưới -->
+        <div class="venue-photo-row">
+          <div class="venue-photo-small">
+            <img src="/images/IMG_5859.jpg" alt="Địa điểm gặp mặt" />
+          </div>
+          <div class="venue-photo-small">
+            <img src="/images/IMG_5862.jpg" alt="Hội trường" />
+          </div>
+          <div class="venue-photo-small">
+            <img src="/images/IMG_5861.jpg" alt="Khuôn viên" />
+          </div>
+        </div>
+      </div>
     </div>
 
   </section>
@@ -298,20 +328,10 @@ import CountdownTimer from './CountdownTimer.vue'
   margin-bottom: 0;
   position: relative;
   padding: 2.5rem 1.5rem;
-  background: url('/images/background-hall.jpg') center/cover no-repeat;
   overflow: hidden;
 }
 
-/* Lớp phủ mờ */
-.venue-block::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  z-index: 0;
-}
-
-/* Đảm bảo các element con nổi lên trên overlay */
+/* Đảm bảo các element con nổi lên trên */
 .venue-block > * {
   position: relative;
   z-index: 1;
@@ -325,7 +345,7 @@ import CountdownTimer from './CountdownTimer.vue'
   font-size: clamp(1.1rem, 5vw, 2.2rem);
   font-weight: 500;
   letter-spacing: 0.08em;
-  color: rgba(255,255,255,0.85);
+  color: #a31c2e;
   text-transform: uppercase;
   line-height: 1;
   white-space: nowrap;
@@ -343,7 +363,7 @@ import CountdownTimer from './CountdownTimer.vue'
   font-size: 0.75rem;
   font-weight: 400;
   letter-spacing: 0.15em;
-  color: rgba(255,255,255,0.9);
+  color: var(--c-text-light);
   text-transform: uppercase;
   line-height: 1.7;
   margin-bottom: 1.2rem;
@@ -351,24 +371,104 @@ import CountdownTimer from './CountdownTimer.vue'
   z-index: 1;
 }
 
+.venue-btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+  z-index: 1;
+}
+
 .map-btn {
   display: inline-block;
-  border: 1px solid rgba(255,255,255,0.6);
+  border: 1px solid var(--c-text-light);
   border-radius: 30px;
   padding: 0.55rem 2rem;
   font-size: 0.78rem;
   letter-spacing: 0.18em;
-  color: #fff;
+  color: var(--c-text-light);
   text-decoration: none;
   text-transform: uppercase;
   transition: background 0.2s ease, color 0.2s ease;
-  position: relative;
-  z-index: 1;
 }
 .map-btn:hover {
-  background: rgba(255,255,255,0.2);
+  background: var(--c-text-light);
   color: #fff;
-  border-color: #fff;
+  border-color: var(--c-text-light);
+}
+
+.directions-btn {
+  display: inline-block;
+  border: 1px solid #a31c2e;
+  border-radius: 30px;
+  padding: 0.55rem 2rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  color: #a31c2e;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.directions-btn:hover {
+  background: #a31c2e;
+  color: #fff;
+}
+
+/* ── Venue photo grid ──────────────────────────────────────── */
+.venue-photos {
+  width: calc(100% + 3rem);
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.venue-photo-main {
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+
+.venue-photo-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.venue-photo-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.venue-photo-small {
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+
+.venue-photo-small:first-child {
+  border-radius: 0 0 0 10px;
+}
+
+.venue-photo-small:last-child {
+  border-radius: 0 0 10px 0;
+}
+
+.venue-photo-small img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.venue-photo-small img:hover,
+.venue-photo-main img:hover {
+  transform: scale(1.04);
 }
 
 /* ── Section divider ───────────────────────────────────────── */
