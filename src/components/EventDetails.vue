@@ -1,3 +1,7 @@
+<script setup>
+import CountdownTimer from './CountdownTimer.vue'
+</script>
+
 <template>
   <section class="event-section">
 
@@ -87,6 +91,9 @@
 
     <!-- thin separator line -->
     <div class="sep animate-fade-in delay-200"></div>
+
+    <!-- ── Countdown ── -->
+    <CountdownTimer class="animate-fade-in-up delay-100" />
 
     <!-- ── Venue block ── -->
     <div class="venue-block animate-fade-in-up delay-200">

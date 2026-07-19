@@ -95,8 +95,8 @@ const startSlowConfetti = () => {
   <!-- Main content — fades in underneath while overlay zooms out -->
   <main class="page" :class="{ 'is-visible': contentVisible }">
     <div class="card-stack">
-      <HeroSection  v-if="contentVisible" />
-      <EventDetails v-if="contentVisible" />
+      <HeroSection     v-if="contentVisible" />
+      <EventDetails    v-if="contentVisible" />
       <RSVPSection  v-if="contentVisible" />
     </div>
   </main>

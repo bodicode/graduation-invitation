@@ -81,7 +81,7 @@
 
       <!-- Danh sách lời chúc -->
       <transition-group name="gb-list" tag="div" class="gb-list">
-        <div v-for="entry in messages" :key="entry.id" class="gb-entry">
+        <div v-for="entry in pagedMessages" :key="entry.id" class="gb-entry">
           <p class="gb-entry-name text-script">{{ entry.name || 'Ẩn danh' }}</p>
           <p class="gb-entry-msg text-serif">{{ entry.msg }}</p>
           <p class="gb-entry-time text-serif">{{ entry.time }}</p>
@@ -91,6 +91,13 @@
       <p v-if="messages.length === 0" class="gb-empty text-serif">
         Hãy là người đầu tiên gửi lời chúc 🌸
       </p>
+
+      <!-- Phân trang -->
+      <div class="gb-pagination" v-if="totalPages > 1">
+        <button class="pg-btn text-serif" @click="goPage(currentPage - 1)" :disabled="currentPage === 1">‹</button>
+        <span class="pg-info text-serif">{{ currentPage }} / {{ totalPages }}</span>
+        <button class="pg-btn text-serif" @click="goPage(currentPage + 1)" :disabled="currentPage === totalPages">›</button>
+      </div>
     </div>
     
     <div class="section-divider animate-fade-in delay-300"></div>
@@ -198,6 +205,19 @@ const submitDone = ref(false)
 const loadError  = ref(false)
 const loadingMsg = ref(false)
 
+// ── Phân trang ────────────────────────────────────────────────
+const PAGE_SIZE   = 5
+const currentPage = ref(1)
+const totalPages  = computed(() => Math.max(1, Math.ceil(messages.value.length / PAGE_SIZE)))
+const pagedMessages = computed(() => {
+  const start = (currentPage.value - 1) * PAGE_SIZE
+  return messages.value.slice(start, start + PAGE_SIZE)
+})
+const goPage = (page) => {
+  if (page < 1 || page > totalPages.value) return
+  currentPage.value = page
+}
+
 const loadMessages = async () => {
   loadingMsg.value = true
   loadError.value  = false
@@ -286,6 +306,7 @@ const submitMsg = async () => {
     guestMsg.value   = ''
     guestName.value  = ''
     submitDone.value = true
+    currentPage.value = 1  // về trang đầu để thấy lời vừa gửi
     setTimeout(() => { submitDone.value = false }, 3000)
   } catch {
     alert('Gửi thất bại, thử lại nhé 🙏')
@@ -763,7 +784,40 @@ onUnmounted(stopAuto)
   padding: 1rem 0;
 }
 
-/* Transition animation for new entries */
+/* ── Pagination ─────────────────────────────────────────────── */
+.gb-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.8rem;
+}
+.pg-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--c-silver-light);
+  background: none;
+  font-size: 1.2rem;
+  color: var(--c-text-mid);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.pg-btn:hover:not(:disabled) {
+  background: #a31c2e;
+  color: #fff;
+  border-color: #a31c2e;
+}
+.pg-btn:disabled { opacity: 0.3; cursor: default; }
+.pg-info {
+  font-size: 0.82rem;
+  color: var(--c-text-light);
+  letter-spacing: 0.06em;
+  font-family: var(--f-serif);
+}
 .gb-list-enter-active { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
 .gb-list-enter-from   { opacity: 0; transform: translateY(-12px) scale(0.97); }
 </style>
