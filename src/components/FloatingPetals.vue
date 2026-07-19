@@ -48,7 +48,7 @@ const petals = ref(
 
 onMounted(() => {
   // Bắt đầu fade out container lúc 8s
-  setTimeout(() => { fading.value = true }, 8000)
+  setTimeout(() => { fading.value = true }, 3000)
 })
 </script>
 
