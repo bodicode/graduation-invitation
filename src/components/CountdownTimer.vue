@@ -12,7 +12,7 @@
     </div>
 
     <p v-if="isPast" class="countdown-done text-script animate-fade-in-up delay-200">
-      Hôm nay là ngày trọng đại! 🎓
+      Hôm nay là ngày trọng đại!
     </p>
   </section>
 </template>
@@ -20,8 +20,7 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 
-// Ngày lễ tốt nghiệp: 09/08/2026 lúc 11:30
-const TARGET = new Date('2026-07-19T10:30:00')
+const TARGET = new Date('2026-08-09T10:30:00')
 
 const now    = ref(new Date())
 const isPast = computed(() => now.value >= TARGET)
@@ -56,7 +55,7 @@ onUnmounted(() => clearInterval(timer))
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 1.5rem 2.5rem;
+  padding: 1rem 1.5rem 2.5rem;
   gap: 1rem;
   border-bottom: 1px solid rgba(163,28,46,0.08);
 }

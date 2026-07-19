@@ -43,22 +43,22 @@ const setupScrollObserver = () => {
 
 // Pháo rớt liên tục khi lướt
 const startContinuousConfetti = () => {
-  // Burst mạnh lúc đầu trong 4s
-  const burstEnd = Date.now() + 4000
+  // Burst nhẹ lúc đầu trong 3s
+  const burstEnd = Date.now() + 3000
   const burstFrame = () => {
     confetti({
-      particleCount: 8,
+      particleCount: 4,
       angle: 90,
       spread: 160,
       origin: { x: Math.random(), y: -0.05 },
       colors: ['#a31c2e', '#7a0018', '#c8961e', '#ffffff', '#ff6b8a', '#ffd700'],
       gravity: 0.4,
-      scalar: 1.1,
+      scalar: 1.0,
       drift: (Math.random() - 0.5) * 0.6,
-      ticks: 900,
+      ticks: 600,
     })
-    if (Date.now() < burstEnd) setTimeout(burstFrame, 200)
-    else startSlowConfetti()  // sau đó chuyển sang rơi thưa
+    if (Date.now() < burstEnd) setTimeout(burstFrame, 400)
+    else startSlowConfetti()
   }
   burstFrame()
 }
@@ -74,9 +74,9 @@ const startSlowConfetti = () => {
       origin: { x: Math.random(), y: -0.05 },
       colors: ['#a31c2e', '#7a0018', '#c8961e', '#ffffff', '#ff6b8a', '#ffd700'],
       gravity: 0.4,
-      scalar: 1.1,
+      scalar: 1.0,
       drift: (Math.random() - 0.5) * 0.6,
-      ticks: 900,
+      ticks: 600,
     })
   }, 1200)
 }

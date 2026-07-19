@@ -19,7 +19,7 @@ const rand = (min, max) => Math.random() * (max - min) + min
 const fading = ref(false)
 
 const petals = ref(
-  Array.from({ length: 22 }, (_, i) => {
+  Array.from({ length: 14 }, (_, i) => {
     const duration = rand(2, 5)
     const delay    = rand(0, 8)      // tất cả xuất hiện trong 8s đầu
     const size     = rand(0.8, 1.6)

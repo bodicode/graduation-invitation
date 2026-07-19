@@ -45,7 +45,7 @@
 
     <!-- ── Lời nhắn ── -->
     <div class="message-block animate-fade-in-up delay-150">
-      <p class="message-text text-serif">Và mình mong bạn có mặt để cùng mình lưu giữ những khoảnh khắc đáng nhớ của hành trình thanh xuân này</p>
+      <p class="message-text text-serif">Và mình mong bạn có mặt để cùng mình lưu giữ những khoảnh khắc đáng nhớ của hành trình thanh xuân này. Bởi sau này, khi nhìn lại những bức ảnh của ngày hôm ấy, điều khiến mình mỉm cười không chỉ là tấm bằng trên tay, mà còn là những gương mặt thân thương đã cùng mình đi qua một quãng đời đẹp nhất.</p>
     </div>
 
     <div class="section-divider animate-scale-in delay-300"></div>
@@ -105,36 +105,79 @@
     <!-- ── Trang phục ── -->
     <div class="attire-block animate-slide-right delay-400">
       <p class="note-text text-serif">TRANG PHỤC</p>
-      <p class="attire-note text-serif">Freestyle (độc lạ càng thích)</p>
+      <p class="attire-note text-serif">Freestyle (độc lạ càng thích nhaaa)</p>
     </div>
 
-    <!-- ── Liên hệ ── -->
-    <div class="contact-block animate-slide-left delay-500">
-      <div class="divider"></div>
-      <p class="note-text text-serif">LIÊN HỆ</p>
-      <a
-        href="https://www.facebook.com/linhthuyngocnguyen04"
-        class="contact-row text-serif"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <span class="contact-name">Nguyễn Ngọc Thùy Linh</span>
-        <span class="contact-sep">·</span>
-        <span class="contact-value">Messenger</span>
-      </a>
-      <a href="tel:0773997188" class="contact-row text-serif">
-        <span class="contact-name">Chị Như</span>
-        <span class="contact-sep">·</span>
-        <span class="contact-value">0773 997 188</span>
-      </a>
-       <a href="tel:0773997188" class="contact-row text-serif">
-        <span class="contact-name">Nhật Hoàng</span>
-        <span class="contact-sep">·</span>
-        <span class="contact-value">0939023883</span>
-       </a>
-    </div>
+    <div class="section-divider animate-fade-in delay-300"></div>
+    <!-- ── Liên hệ redesign ── -->
+    <div class="contact-section animate-fade-in-up delay-500">
 
-    <div class="bottom-pad"></div>
+      <!-- Deco flowers -->
+      <span class="ct-flower f1">🌸</span>
+      <span class="ct-flower f2">🌺</span>
+      <span class="ct-flower f4">✦</span>
+      <span class="ct-flower f3">🌸</span>
+      <span class="ct-flower f5">🌸</span>
+      <span class="ct-flower f4">🌸</span>
+
+      <!-- Layout: ảnh trái + card phải -->
+      <div class="ct-layout">
+
+        <!-- Video -->
+        <div class="ct-photo-wrap">
+          <video
+            class="ct-photo"
+            src="/video/contact.mp4"
+            autoplay
+            loop
+            muted
+            playsinline
+          ></video>
+          <!-- Note nhỏ -->
+          <div class="ct-note text-serif">
+            <p>Cảm ơn bạn đã ghé thăm thiệp của mình 🌸</p>
+          </div>
+        </div>
+
+        <!-- Contact card -->
+        <div class="ct-card">
+          <p class="ct-title text-script">Liên hệ mình</p>
+
+          <div class="ct-divider"></div>
+
+          <div class="ct-items">
+            <a
+              href="https://www.facebook.com/linhthuyngocnguyen04"
+              class="ct-item text-serif"
+              target="_blank" rel="noopener noreferrer"
+            >
+              <span class="ct-icon">💬</span>
+              <div class="ct-item-info">
+                <span class="ct-item-label">Nguyễn Ngọc Thùy Linh</span>
+                <span class="ct-item-val">Messenger</span>
+              </div>
+            </a>
+
+            <a href="tel:0773997188" class="ct-item text-serif">
+              <span class="ct-icon">📞</span>
+              <div class="ct-item-info">
+                <span class="ct-item-label">Chị Như</span>
+                <span class="ct-item-val">0773 997 188</span>
+              </div>
+            </a>
+
+            <a href="tel:0939023883" class="ct-item text-serif">
+              <span class="ct-icon">📞</span>
+              <div class="ct-item-info">
+                <span class="ct-item-label">Nhật Hoàng</span>
+                <span class="ct-item-val">0939 023 883</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
 
     <!-- ── Graduation banner ── -->
     <div class="grad-banner animate-fade-in-up">
@@ -151,6 +194,7 @@ const slides = [
   { src: '/images/IMG_1930.jpg',  alt: 'Ký ức tốt nghiệp' },
   { src: '/images/IMG_5744.JPG',  alt: 'Ảnh tốt nghiệp'   },
   { src: '/images/IMG_5745.PNG',  alt: 'Chúc mừng'         },
+  { src: '/images/IMG_5745.JPG',  alt: 'Chúc mừng'         },
 ]
 
 const current    = ref(0)
@@ -325,7 +369,11 @@ onUnmounted(stopAuto)
 <style scoped>
 /* ── Section ───────────────────────────────────────────────── */
 .rsvp-section {
-  background: var(--c-card);
+  background: 
+    radial-gradient(ellipse at 20% 10%, rgba(163,28,46,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 90%, rgba(163,28,46,0.04) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cg opacity='0.045' fill='%23a31c2e'%3E%3Ccircle cx='10' cy='10' r='1.2'/%3E%3Ccircle cx='50' cy='10' r='1.2'/%3E%3Ccircle cx='30' cy='30' r='1.5'/%3E%3Ccircle cx='70' cy='30' r='1.2'/%3E%3Ccircle cx='10' cy='50' r='1.2'/%3E%3Ccircle cx='50' cy='50' r='1.5'/%3E%3Ccircle cx='30' cy='70' r='1.2'/%3E%3Ccircle cx='70' cy='70' r='1.2'/%3E%3Cpath d='M30 25 C31 23 33 23 34 25 C35 23 37 23 38 25 C37 27 34 29 34 29 C34 29 31 27 30 25Z' opacity='0.6'/%3E%3Cpath d='M70 65 C71 63 73 63 74 65 C75 63 77 63 78 65 C77 67 74 69 74 69 C74 69 71 67 70 65Z' opacity='0.6'/%3E%3C/g%3E%3C/svg%3E") repeat,
+    #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -473,7 +521,7 @@ onUnmounted(stopAuto)
   text-align: center;
   margin-top: 0;
   margin-bottom: 0.5rem;
-  padding: 0 1rem 0;
+  padding: 1rem 0;
 }
 .chapter-text {
   font-size: clamp(1.6rem, 7vw, 2.8rem);
@@ -649,14 +697,143 @@ onUnmounted(stopAuto)
   font-family: var(--f-serif);
 }
 
-/* ── Bottom pad ────────────────────────────────────────────── */
-.bottom-pad { height: 2rem; }
+/* ── Contact Section ────────────────────────────────────────── */
+.contact-section {
+  width: calc(100% + 3rem);
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  margin-bottom: 0;
+  position: relative;
+  padding: 0;
+}
+
+/* Hoa trang trí */
+.ct-flower {
+  position: absolute;
+  pointer-events: none;
+  animation: floatDance 4s ease-in-out infinite;
+  font-size: 1.4rem;
+  z-index: 4;
+}
+.f1 { top: 10px;  left: 2%;  animation-delay: 0s;   font-size: 1.6rem; }
+.f2 { top: 20px;  right: 4%; animation-delay: 0.8s; font-size: 1.3rem; }
+.f3 { bottom: 60px; left: 4%;  animation-delay: 1.4s; font-size: 1.1rem; }
+.f4 { top: 50%;  right: 2%; animation-delay: 0.4s; font-size: 0.9rem; color: #c8961e; }
+.f5 { top: 80%;  right: 2%; animation-delay: 0.4s; font-size: 0.9rem; color: #c8961e; }
+
+@keyframes floatDance {
+  0%,100% { transform: translateY(0) rotate(-5deg); }
+  50%      { transform: translateY(-8px) rotate(5deg); }
+}
+
+/* ── Layout: ảnh đè lên card ──────────────────────────────── */
+.ct-layout {
+  position: relative;
+  min-height: 240px;
+}
+
+/* Card làm nền — full width */
+.ct-card {
+  background: #fff;
+  border: 1.5px solid rgba(163,28,46,0.2);
+  border-radius: 0;
+  padding: 1.4rem 1.2rem 1.4rem calc(38% + 1rem);
+  box-shadow: 0 4px 20px rgba(163,28,46,0.1);
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Ảnh đè lên từ bên trái */
+.ct-photo-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 38%;
+  height: 100%;
+  z-index: 2;
+}
+.ct-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0;
+  box-shadow: 4px 0 20px rgba(80,0,20,0.18);
+  display: block;
+}
+
+/* Note nhỏ dưới ảnh — ẩn vì không còn chỗ */
+.ct-note { display: none; }
+
+.ct-title {
+  font-size: 1.6rem;
+  color: #a31c2e;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.ct-divider {
+  width: 36px;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, #a31c2e, transparent);
+  margin: 0 0 0.9rem;
+}
+
+/* Items */
+.ct-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.ct-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.ct-item:hover { opacity: 0.7; }
+
+.ct-icon {
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  background: rgba(163,28,46,0.08);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ct-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.ct-item-label {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--c-text);
+  font-family: var(--f-serif);
+  line-height: 1;
+}
+.ct-item-val {
+  font-size: 0.7rem;
+  color: #a31c2e;
+  font-family: var(--f-serif);
+  letter-spacing: 0.03em;
+  line-height: 1;
+}
 
 /* ── Graduation banner ─────────────────────────────────────── */
 .grad-banner {
   width: calc(100% + 3rem);
   margin-left: -1.5rem;
   margin-right: -1.5rem;
+  margin-top: 0;
   margin-bottom: -1.5rem;
   background: #a31c2e;
   padding: 1.2rem 1.5rem;
@@ -677,7 +854,7 @@ onUnmounted(stopAuto)
   width: 40px;
   height: 1px;
   background: var(--c-silver-light);
-  margin: 0 auto 2.5rem;
+  margin: 0 auto 1.5rem;
 }
 
 /* ── Guestbook ─────────────────────────────────────────────── */

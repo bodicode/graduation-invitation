@@ -117,16 +117,16 @@ import CountdownTimer from './CountdownTimer.vue'
       </a>
     </div>
 
-    <!-- ── Divider trước gallery ── -->
-    <div class="section-divider animate-fade-in delay-300"></div>
-
   </section>
 </template>
 
 <style scoped>
 /* ── Section wrapper ───────────────────────────────────────── */
 .event-section {
-  background: var(--c-card);
+  background: 
+    radial-gradient(ellipse at 50% 100%, rgba(163,28,46,0.07) 0%, transparent 60%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cg opacity='0.045' fill='%23a31c2e'%3E%3Ccircle cx='10' cy='10' r='1.2'/%3E%3Ccircle cx='50' cy='10' r='1.2'/%3E%3Ccircle cx='30' cy='30' r='1.5'/%3E%3Ccircle cx='70' cy='30' r='1.2'/%3E%3Ccircle cx='10' cy='50' r='1.2'/%3E%3Ccircle cx='50' cy='50' r='1.5'/%3E%3Ccircle cx='30' cy='70' r='1.2'/%3E%3Ccircle cx='70' cy='70' r='1.2'/%3E%3Cpath d='M30 25 C31 23 33 23 34 25 C35 23 37 23 38 25 C37 27 34 29 34 29 C34 29 31 27 30 25Z' opacity='0.6'/%3E%3Cpath d='M70 65 C71 63 73 63 74 65 C75 63 77 63 78 65 C77 67 74 69 74 69 C74 69 71 67 70 65Z' opacity='0.6'/%3E%3C/g%3E%3C/svg%3E") repeat,
+    #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -144,6 +144,7 @@ import CountdownTimer from './CountdownTimer.vue'
 .time-watermark-wrap {
   overflow: hidden;
   margin-bottom: 0.2rem;
+  padding-top: 1rem;
 }
 .time-watermark {
   font-size: clamp(1.1rem, 5vw, 2.2rem);
@@ -375,7 +376,7 @@ import CountdownTimer from './CountdownTimer.vue'
   width: 40px;
   height: 1px;
   background: var(--c-silver-light);
-  margin: 0 auto 2.5rem;
+  margin: 0 auto 0;
 }
 
 </style>
